@@ -60,7 +60,7 @@ def index():
             if video_count > expected_video:
                 logger.info("Data is available in database")
                 return redirect(
-                    url_for(".results", messages=search_id, expected_val=expected_video)
+                    url_for("results", messages=search_id, expected_val=expected_video)
                 )
 
             else:
