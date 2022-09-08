@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Channel Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<div class="content">
+    <div class="container">
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/"><b>New Reuqest</b></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="content">
+            <br>
+            <h1 style="text-align: center"><i>New Request YouTube Channel</i></h1><br>
+            <h4 style="text-align: center"><b>Note: </b>Please enter new request channel url like
+                "https://www.youtube.com/c/Telusko"
+            </h4><br><br>
+            <div class="form">
+                <form action="/new_request" method="POST">
+                    <label><b>Enter new request for Youtube channel:</b></label> <input type="text" name="content"
+                                                                                        id="content"><br><br>
+                    <label><b>Enter expected video count:</b></label> <input type="text" name="expected_video"
+                                                                             id="expected_video"><br><br>
+                    <input type="submit" value="Submit">
+
+                </form>
+                <div style="text-align: center">
+                    <p class="buttons">
+                        <button class="button is-small btn-outline-primary mr-1"
+                                onclick="window.open('https://github.com/Anushka30/YouTube-Scrapper', '_blank')">
+                            <span class="icon is-small">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>GitHub</span>
+                        </button>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -167,7 +167,7 @@ class MongoDBConnect:
             )
             if collection_check_status:
                 x = collection.find_one({"VIDEO_TITLE": records["VIDEO_TITLE"]})
-                if x["_id"]:
+                if x:
                     self.logger.info(f"{x['_id']}.")
                     if len(x['COMMENTS']) != len(records["COMMENTS"]):
                         myquery = {"_id": x['_id']}

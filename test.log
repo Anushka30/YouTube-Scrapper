@@ -3509,3 +3509,540 @@ ValueError: range() arg 3 must not be zero
 2022-09-08 17:36:49,007:INFO:youtube:mongo_client created.
 2022-09-08 17:36:49,009:INFO:youtube:mongo_client connection closed.
 2022-09-08 17:36:49,009:INFO:youtube:Record found in Video-Data.
+2022-09-08 18:31:38,248:INFO:youtube:Connected with snowflakes
+2022-09-08 18:31:39,762:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:31:39,762:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:33:39,733:INFO:youtube:Connected with snowflakes
+2022-09-08 18:33:45,892:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:33:45,892:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:35:10,081:INFO:youtube:Connected with snowflakes
+2022-09-08 18:35:13,683:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:35:13,684:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:37:42,034:INFO:youtube:Connected with snowflakes
+2022-09-08 18:37:42,894:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:37:42,894:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:41:02,404:INFO:youtube:Connected with snowflakes
+2022-09-08 18:41:03,147:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:41:03,147:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:43:13,318:INFO:youtube:Connected with snowflakes
+2022-09-08 18:43:14,165:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:43:14,165:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:43:38,959:INFO:youtube:Connected with snowflakes
+2022-09-08 18:43:39,866:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:43:39,866:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:43:47,384:INFO:youtube:Connected with snowflakes
+2022-09-08 18:43:47,909:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:43:47,909:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:45:00,173:INFO:youtube:Connected with snowflakes
+2022-09-08 18:45:01,151:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:45:01,152:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:46:16,616:INFO:youtube:Connected with snowflakes
+2022-09-08 18:46:17,504:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:46:17,504:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:46:47,318:INFO:youtube:Connected with snowflakes
+2022-09-08 18:46:48,173:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:46:48,173:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:46:55,948:INFO:youtube:Connected with snowflakes
+2022-09-08 18:46:56,716:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:46:56,716:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 18:47:17,826:INFO:youtube:Connected with snowflakes
+2022-09-08 18:47:18,639:INFO:youtube:Connected with snowflakes.
+2022-09-08 18:47:18,640:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 19:29:23,050:INFO:youtube:Connected with snowflakes
+2022-09-08 19:29:23,875:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:29:23,875:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 19:30:03,446:INFO:youtube:Connected with snowflakes
+2022-09-08 19:30:04,450:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:30:04,451:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 19:30:37,617:INFO:youtube:Connected with snowflakes
+2022-09-08 19:30:38,466:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:30:38,466:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 19:33:21,621:INFO:youtube:Connected with snowflakes
+2022-09-08 19:33:22,524:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:33:22,524:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 19:35:09,795:INFO:youtube:Connected with snowflakes
+2022-09-08 19:35:10,642:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:35:10,642:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 19:40:25,535:INFO:youtube:Connected with snowflakes
+2022-09-08 19:40:26,349:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:40:26,349:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 19:48:06,144:INFO:youtube:Connected with snowflakes
+2022-09-08 19:48:07,115:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:48:07,115:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 19:49:57,323:INFO:youtube:Connected with snowflakes
+2022-09-08 19:50:16,996:INFO:youtube:Open the URL
+2022-09-08 19:50:17,827:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:50:17,827:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 19:50:19,776:INFO:youtube:Video deleted in local folder
+2022-09-08 19:50:20,075:INFO:youtube:service created successfully drive
+2022-09-08 19:50:20,076:INFO:youtube:Created G Drive connector
+2022-09-08 19:50:27,074:INFO:youtube:Downloading video just a beginning
+2022-09-08 19:50:29,742:INFO:youtube:Uploaded file to https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 19:50:29,742:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 19:50:29,746:INFO:youtube:Stored channel name and video details in database
+2022-09-08 19:50:31,384:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:50:38,690:INFO:youtube:Successfully inserted Data in CHANNEL_VIDEOS
+2022-09-08 19:50:38,690:INFO:youtube:Stored each video details in database
+2022-09-08 19:50:38,690:INFO:youtube:Urls: ['/shorts/fe9Zwpi90Cg']
+2022-09-08 19:50:44,776:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:50:45,335:ERROR:youtube:Error! range() arg 3 must not be zero
+2022-09-08 19:50:45,388:ERROR:youtube:Traceback (most recent call last):
+  File "E:\Python_Work\Python_Exercise\Python_Exercise\ineuron\Project\final_version_youtuveScrapper\snowflakes_connection.py", line 98, in insert_data
+    success, nchunks, nrows, _ = write_pandas(
+  File "C:\Users\anush\AppData\Local\Programs\Python\Python39\lib\site-packages\snowflake\connector\pandas_tools.py", line 183, in write_pandas
+    for i, chunk in chunk_helper(df, chunk_size):
+  File "C:\Users\anush\AppData\Local\Programs\Python\Python39\lib\site-packages\snowflake\connector\pandas_tools.py", line 37, in chunk_helper
+    for i in range(0, len(lst), n):
+ValueError: range() arg 3 must not be zero
+
+2022-09-08 19:50:45,389:INFO:youtube:Stored each video comments in Mongodb
+2022-09-08 19:50:45,412:INFO:youtube:search_id: sudhanshukumarall 
+2022-09-08 19:50:46,186:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:50:46,187:INFO:youtube:sql select top 1 * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 19:50:46,939:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:50:46,939:INFO:youtube:sql select * from VIDEO_INFO where USERID = 'sudhanshukumarall';
+2022-09-08 19:58:54,743:INFO:youtube:Connected with snowflakes
+2022-09-08 19:58:55,593:INFO:youtube:Connected with snowflakes.
+2022-09-08 19:58:55,593:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 20:10:57,340:INFO:youtube:Connected with snowflakes
+2022-09-08 20:10:58,154:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:10:58,154:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 20:20:09,803:INFO:youtube:Connected with snowflakes
+2022-09-08 20:20:10,690:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:20:10,690:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 20:20:34,640:INFO:youtube:Connected with snowflakes
+2022-09-08 20:20:46,878:INFO:youtube:Open the URL
+2022-09-08 20:20:47,704:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:20:47,704:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 20:20:49,360:INFO:youtube:Video deleted in local folder
+2022-09-08 20:20:49,370:INFO:youtube:service created successfully drive
+2022-09-08 20:20:49,370:INFO:youtube:Created G Drive connector
+2022-09-08 20:20:52,376:INFO:youtube:Downloading video just a beginning
+2022-09-08 20:20:53,043:INFO:youtube:Already Uploaded file to https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 20:20:53,043:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 20:20:53,046:INFO:youtube:Stored channel name and video details in database
+2022-09-08 20:20:53,941:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:20:59,931:INFO:youtube:Successfully inserted Data in CHANNEL_VIDEOS
+2022-09-08 20:20:59,931:INFO:youtube:Stored each video details in database
+2022-09-08 20:20:59,931:INFO:youtube:Urls: ['/shorts/fe9Zwpi90Cg']
+2022-09-08 20:21:59,464:INFO:youtube:Connected with snowflakes
+2022-09-08 20:22:00,194:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:22:00,194:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 20:22:08,868:INFO:youtube:Connected with snowflakes
+2022-09-08 20:22:38,504:INFO:youtube:Open the URL
+2022-09-08 20:22:39,202:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:22:39,202:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 20:22:40,545:INFO:youtube:Video deleted in local folder
+2022-09-08 20:22:40,551:INFO:youtube:service created successfully drive
+2022-09-08 20:22:40,551:INFO:youtube:Created G Drive connector
+2022-09-08 20:22:42,931:INFO:youtube:Downloading video just a beginning
+2022-09-08 20:22:43,571:INFO:youtube:Already Uploaded file to https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 20:22:43,571:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 20:22:43,575:INFO:youtube:Stored channel name and video details in database
+2022-09-08 20:22:44,094:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:22:48,606:INFO:youtube:Successfully inserted Data in CHANNEL_VIDEOS
+2022-09-08 20:22:48,607:INFO:youtube:Stored each video details in database
+2022-09-08 20:22:48,607:INFO:youtube:Urls: ['/shorts/fe9Zwpi90Cg']
+2022-09-08 20:26:03,432:INFO:youtube:Connected with snowflakes
+2022-09-08 20:26:28,479:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:26:28,480:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 20:27:23,356:INFO:youtube:Connected with snowflakes
+2022-09-08 20:29:57,233:INFO:youtube:Open the URL
+2022-09-08 20:30:08,907:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:30:14,292:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 20:30:38,689:INFO:youtube:Video deleted in local folder
+2022-09-08 20:30:38,702:INFO:youtube:service created successfully drive
+2022-09-08 20:30:38,702:INFO:youtube:Created G Drive connector
+2022-09-08 20:30:41,354:INFO:youtube:Downloading video just a beginning
+2022-09-08 20:30:46,306:INFO:youtube:Already Uploaded file to https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 20:30:46,306:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 20:30:53,477:INFO:youtube:Downloading video How To Prepare DSA as Fresher |  DSA | One Neuron |Roadmap| Data Structure Algorithm
+2022-09-08 20:30:57,380:INFO:youtube:Uploaded file to https://drive.google.com/open?id=1pGVDCLmz3aQl7HE8WMDMBI66_WzOhq8L
+2022-09-08 20:30:57,381:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1pGVDCLmz3aQl7HE8WMDMBI66_WzOhq8L
+2022-09-08 20:31:03,612:INFO:youtube:Downloading video How To Prepare For Product Based Company| DSA | One Neuron | Roadmap
+2022-09-08 20:31:07,638:INFO:youtube:Uploaded file to https://drive.google.com/open?id=1mC9QUdJ7a7rMlIGDKKS77fQQtlou18Cq
+2022-09-08 20:31:07,638:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1mC9QUdJ7a7rMlIGDKKS77fQQtlou18Cq
+2022-09-08 20:32:41,595:INFO:youtube:Stored channel name and video details in database
+2022-09-08 20:32:49,278:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:32:53,813:INFO:youtube:Successfully inserted Data in CHANNEL_VIDEOS
+2022-09-08 20:33:13,447:INFO:youtube:Stored each video details in database
+2022-09-08 20:33:15,772:INFO:youtube:Urls: ['/shorts/fe9Zwpi90Cg', '/watch?v=u64iIH3DMYE', '/watch?v=C2TOS1QJrao']
+2022-09-08 20:33:54,697:INFO:youtube:Created thumbnail urls image to base64 object
+2022-09-08 20:34:41,985:INFO:youtube:mongo_client created.
+2022-09-08 20:34:42,554:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 20:34:42,602:INFO:youtube:mongo_client connection closed.
+2022-09-08 20:34:46,655:INFO:youtube:mongo_client created.
+2022-09-08 20:34:46,656:INFO:youtube:mongo_client connection closed.
+2022-09-08 20:34:47,224:INFO:youtube:collection Video-Data is present.
+2022-09-08 20:34:51,292:INFO:youtube:mongo_client created.
+2022-09-08 20:34:51,293:INFO:youtube:mongo_client connection closed.
+2022-09-08 20:34:51,857:ERROR:youtube:Traceback (most recent call last):
+  File "E:\Python_Work\Python_Exercise\Python_Exercise\ineuron\Project\final_version_youtuveScrapper\mongodb_connection.py", line 170, in insert_records
+    if x["_id"]:
+TypeError: 'NoneType' object is not subscriptable
+
+2022-09-08 20:34:56,105:ERROR:youtube:Error! (insert_records): Failed to insert records 
+ 'NoneType' object is not subscriptable
+2022-09-08 20:34:56,109:ERROR:youtube:Traceback (most recent call last):
+  File "E:\Python_Work\Python_Exercise\Python_Exercise\ineuron\Project\final_version_youtuveScrapper\mongodb_connection.py", line 170, in insert_records
+    if x["_id"]:
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python_Work\Python_Exercise\Python_Exercise\ineuron\Project\final_version_youtuveScrapper\youtube_scrapping.py", line 238, in video_info
+    mongo_client.insert_records(
+  File "E:\Python_Work\Python_Exercise\Python_Exercise\ineuron\Project\final_version_youtuveScrapper\mongodb_connection.py", line 191, in insert_records
+    raise Exception(
+Exception: (insert_records): Failed to insert records 
+ 'NoneType' object is not subscriptable
+
+2022-09-08 20:34:56,888:ERROR:youtube:Error! object of type 'NoneType' has no len()
+2022-09-08 20:34:56,892:ERROR:youtube:Traceback (most recent call last):
+  File "E:\Python_Work\Python_Exercise\Python_Exercise\ineuron\Project\final_version_youtuveScrapper\app.py", line 109, in new_request
+    if len(res) != 0:
+TypeError: object of type 'NoneType' has no len()
+
+2022-09-08 20:58:21,274:INFO:youtube:Connected with snowflakes
+2022-09-08 20:58:22,235:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:58:22,235:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 20:58:45,153:INFO:youtube:Connected with snowflakes
+2022-09-08 20:58:46,786:INFO:youtube:Connected with snowflakes
+2022-09-08 20:58:57,823:INFO:youtube:Open the URL
+2022-09-08 20:58:58,732:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:58:58,732:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 20:58:59,194:INFO:youtube:Open the URL
+2022-09-08 20:58:59,984:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:58:59,985:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 20:59:01,755:INFO:youtube:Video deleted in local folder
+2022-09-08 20:59:02,227:INFO:youtube:Video deleted in local folder
+2022-09-08 20:59:02,345:INFO:youtube:service created successfully drive
+2022-09-08 20:59:02,345:INFO:youtube:Created G Drive connector
+2022-09-08 20:59:02,346:INFO:youtube:Stored channel name and video details in database
+2022-09-08 20:59:02,427:INFO:youtube:service created successfully drive
+2022-09-08 20:59:02,427:INFO:youtube:Created G Drive connector
+2022-09-08 20:59:02,430:INFO:youtube:Stored channel name and video details in database
+2022-09-08 20:59:03,364:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:59:03,394:INFO:youtube:Connected with snowflakes.
+2022-09-08 20:59:03,534:ERROR:youtube:Error! range() arg 3 must not be zero
+2022-09-08 20:59:03,542:ERROR:youtube:Traceback (most recent call last):
+  File "E:\Python_Work\Python_Exercise\Python_Exercise\ineuron\Project\final_version_youtuveScrapper\snowflakes_connection.py", line 98, in insert_data
+    success, nchunks, nrows, _ = write_pandas(
+  File "C:\Users\anush\AppData\Local\Programs\Python\Python39\lib\site-packages\snowflake\connector\pandas_tools.py", line 183, in write_pandas
+    for i, chunk in chunk_helper(df, chunk_size):
+  File "C:\Users\anush\AppData\Local\Programs\Python\Python39\lib\site-packages\snowflake\connector\pandas_tools.py", line 37, in chunk_helper
+    for i in range(0, len(lst), n):
+ValueError: range() arg 3 must not be zero
+
+2022-09-08 20:59:03,542:INFO:youtube:Stored each video details in database
+2022-09-08 20:59:03,542:INFO:youtube:Urls: []
+2022-09-08 20:59:03,551:ERROR:youtube:Error! range() arg 3 must not be zero
+2022-09-08 20:59:03,552:ERROR:youtube:Traceback (most recent call last):
+  File "E:\Python_Work\Python_Exercise\Python_Exercise\ineuron\Project\final_version_youtuveScrapper\snowflakes_connection.py", line 98, in insert_data
+    success, nchunks, nrows, _ = write_pandas(
+  File "C:\Users\anush\AppData\Local\Programs\Python\Python39\lib\site-packages\snowflake\connector\pandas_tools.py", line 183, in write_pandas
+    for i, chunk in chunk_helper(df, chunk_size):
+  File "C:\Users\anush\AppData\Local\Programs\Python\Python39\lib\site-packages\snowflake\connector\pandas_tools.py", line 37, in chunk_helper
+    for i in range(0, len(lst), n):
+ValueError: range() arg 3 must not be zero
+
+2022-09-08 20:59:03,552:INFO:youtube:Stored each video details in database
+2022-09-08 20:59:03,552:INFO:youtube:Urls: []
+2022-09-08 21:01:04,434:INFO:youtube:Connected with snowflakes
+2022-09-08 21:01:05,257:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:01:05,257:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 21:01:11,986:INFO:youtube:Connected with snowflakes
+2022-09-08 21:01:22,799:INFO:youtube:Open the URL
+2022-09-08 21:01:23,961:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:01:23,962:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 21:01:25,775:INFO:youtube:Video deleted in local folder
+2022-09-08 21:01:25,787:INFO:youtube:service created successfully drive
+2022-09-08 21:01:25,787:INFO:youtube:Created G Drive connector
+2022-09-08 21:01:28,269:INFO:youtube:Downloading video just a beginning
+2022-09-08 21:01:28,933:INFO:youtube:Already Uploaded file to https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 21:01:28,933:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 21:01:31,660:INFO:youtube:Downloading video How To Prepare DSA as Fresher |  DSA | One Neuron |Roadmap| Data Structure Algorithm
+2022-09-08 21:01:32,219:INFO:youtube:Already Uploaded file to https://drive.google.com/open?id=1pGVDCLmz3aQl7HE8WMDMBI66_WzOhq8L
+2022-09-08 21:01:32,219:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1pGVDCLmz3aQl7HE8WMDMBI66_WzOhq8L
+2022-09-08 21:01:40,237:INFO:youtube:Stored channel name and video details in database
+2022-09-08 21:01:40,991:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:01:46,203:INFO:youtube:Successfully inserted Data in CHANNEL_VIDEOS
+2022-09-08 21:01:46,203:INFO:youtube:Stored each video details in database
+2022-09-08 21:01:46,203:INFO:youtube:Urls: ['/shorts/fe9Zwpi90Cg', '/watch?v=u64iIH3DMYE']
+2022-09-08 21:02:14,725:INFO:youtube:Created thumbnail urls image to base64 object
+2022-09-08 21:02:18,792:INFO:youtube:mongo_client created.
+2022-09-08 21:02:19,387:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:02:19,442:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:02:23,508:INFO:youtube:mongo_client created.
+2022-09-08 21:02:23,509:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:02:23,922:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:02:27,977:INFO:youtube:mongo_client created.
+2022-09-08 21:02:27,977:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:02:28,598:INFO:youtube:Data inserted in Video-Data.
+2022-09-08 21:02:28,598:INFO:youtube:Data inserted in mongodb
+2022-09-08 21:02:32,729:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:02:35,920:INFO:youtube:Successfully inserted Data in VIDEO_INFO
+2022-09-08 21:02:35,920:INFO:youtube:Stored each video comments in Mongodb
+2022-09-08 21:02:35,931:INFO:youtube:search_id: sudhanshukumarall 
+2022-09-08 21:02:36,644:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:02:36,644:INFO:youtube:sql select top 2 * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 21:02:37,382:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:02:37,382:INFO:youtube:sql select * from VIDEO_INFO where USERID = 'sudhanshukumarall';
+2022-09-08 21:02:41,765:INFO:youtube:mongo_client created.
+2022-09-08 21:02:42,182:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:02:42,222:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:02:46,285:INFO:youtube:mongo_client created.
+2022-09-08 21:02:46,285:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:02:46,610:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:02:50,684:INFO:youtube:mongo_client created.
+2022-09-08 21:02:50,685:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:02:50,685:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:04:15,555:INFO:youtube:Connected with snowflakes
+2022-09-08 21:04:16,327:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:04:16,327:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 21:04:40,415:INFO:youtube:Connected with snowflakes
+2022-09-08 21:04:41,118:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:04:41,118:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'HiteshChoudharydotcom';
+2022-09-08 21:04:41,611:INFO:youtube:Data is available in database
+2022-09-08 21:04:41,616:INFO:youtube:search_id: HiteshChoudharydotcom 
+2022-09-08 21:04:42,144:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:04:42,145:INFO:youtube:sql select top 2 * from CHANNEL_VIDEOS where USERID = 'HiteshChoudharydotcom';
+2022-09-08 21:04:43,306:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:04:43,306:INFO:youtube:sql select * from VIDEO_INFO where USERID = 'HiteshChoudharydotcom';
+2022-09-08 21:04:48,927:INFO:youtube:mongo_client created.
+2022-09-08 21:04:49,371:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:04:49,409:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:04:53,448:INFO:youtube:mongo_client created.
+2022-09-08 21:04:53,449:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:04:54,033:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:04:58,073:INFO:youtube:mongo_client created.
+2022-09-08 21:04:58,073:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:04:58,073:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:05:02,562:INFO:youtube:mongo_client created.
+2022-09-08 21:05:03,045:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:05:03,082:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:05:07,131:INFO:youtube:mongo_client created.
+2022-09-08 21:05:07,131:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:05:07,443:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:05:11,492:INFO:youtube:mongo_client created.
+2022-09-08 21:05:11,492:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:05:11,493:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:28:41,073:INFO:youtube:Connected with snowflakes
+2022-09-08 21:28:41,795:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:28:41,795:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'krishnaik06';
+2022-09-08 21:28:42,446:INFO:youtube:Data is available in database
+2022-09-08 21:28:42,452:INFO:youtube:search_id: krishnaik06 
+2022-09-08 21:28:43,149:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:28:43,149:INFO:youtube:sql select top 4 * from CHANNEL_VIDEOS where USERID = 'krishnaik06';
+2022-09-08 21:28:44,364:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:28:44,364:INFO:youtube:sql select * from VIDEO_INFO where USERID = 'krishnaik06';
+2022-09-08 21:28:49,622:INFO:youtube:mongo_client created.
+2022-09-08 21:28:49,972:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:28:49,995:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:28:54,060:INFO:youtube:mongo_client created.
+2022-09-08 21:28:54,060:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:28:54,508:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:28:58,569:INFO:youtube:mongo_client created.
+2022-09-08 21:28:58,570:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:28:58,570:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:29:03,219:INFO:youtube:mongo_client created.
+2022-09-08 21:29:03,634:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:29:03,670:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:29:07,714:INFO:youtube:mongo_client created.
+2022-09-08 21:29:07,714:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:29:07,983:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:29:12,026:INFO:youtube:mongo_client created.
+2022-09-08 21:29:12,026:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:29:12,027:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:29:16,538:INFO:youtube:mongo_client created.
+2022-09-08 21:29:16,923:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:29:16,958:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:29:21,199:INFO:youtube:mongo_client created.
+2022-09-08 21:29:21,200:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:29:22,015:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:29:26,061:INFO:youtube:mongo_client created.
+2022-09-08 21:29:26,062:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:29:26,062:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:29:30,575:INFO:youtube:mongo_client created.
+2022-09-08 21:29:30,963:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:29:30,988:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:29:35,035:INFO:youtube:mongo_client created.
+2022-09-08 21:29:35,035:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:29:35,540:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:29:39,611:INFO:youtube:mongo_client created.
+2022-09-08 21:29:39,611:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:29:39,611:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:30:33,773:INFO:youtube:Connected with snowflakes
+2022-09-08 21:30:35,023:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:30:35,024:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 21:31:26,263:INFO:youtube:Connected with snowflakes
+2022-09-08 21:31:37,151:INFO:youtube:Open the URL
+2022-09-08 21:31:38,126:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:31:38,126:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 21:31:40,530:INFO:youtube:Video deleted in local folder
+2022-09-08 21:31:40,536:INFO:youtube:service created successfully drive
+2022-09-08 21:31:40,536:INFO:youtube:Created G Drive connector
+2022-09-08 21:31:42,358:INFO:youtube:Downloading video just a beginning
+2022-09-08 21:31:43,274:INFO:youtube:Already Uploaded file to https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 21:31:43,274:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1MWjg5kutTKeRLfhmrqMlfiDuTRAo7rSt
+2022-09-08 21:31:46,038:INFO:youtube:Downloading video How To Prepare DSA as Fresher |  DSA | One Neuron |Roadmap| Data Structure Algorithm
+2022-09-08 21:31:46,652:INFO:youtube:Already Uploaded file to https://drive.google.com/open?id=1pGVDCLmz3aQl7HE8WMDMBI66_WzOhq8L
+2022-09-08 21:31:46,653:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1pGVDCLmz3aQl7HE8WMDMBI66_WzOhq8L
+2022-09-08 21:31:49,863:INFO:youtube:Downloading video How To Prepare For Product Based Company| DSA | One Neuron | Roadmap
+2022-09-08 21:31:50,356:INFO:youtube:Already Uploaded file to https://drive.google.com/open?id=1mC9QUdJ7a7rMlIGDKKS77fQQtlou18Cq
+2022-09-08 21:31:50,356:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1mC9QUdJ7a7rMlIGDKKS77fQQtlou18Cq
+2022-09-08 21:31:58,371:INFO:youtube:Stored channel name and video details in database
+2022-09-08 21:31:59,646:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:32:04,566:INFO:youtube:Successfully inserted Data in CHANNEL_VIDEOS
+2022-09-08 21:32:04,567:INFO:youtube:Stored each video details in database
+2022-09-08 21:32:04,567:INFO:youtube:Urls: ['/shorts/fe9Zwpi90Cg', '/watch?v=u64iIH3DMYE', '/watch?v=C2TOS1QJrao']
+2022-09-08 21:32:33,727:INFO:youtube:Created thumbnail urls image to base64 object
+2022-09-08 21:32:37,788:INFO:youtube:mongo_client created.
+2022-09-08 21:32:38,127:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:32:38,150:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:32:42,202:INFO:youtube:mongo_client created.
+2022-09-08 21:32:42,203:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:32:42,703:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:32:46,747:INFO:youtube:mongo_client created.
+2022-09-08 21:32:46,748:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:32:47,170:INFO:youtube:631a0b0c37913f4e779eca6f.
+2022-09-08 21:32:47,170:INFO:youtube:Already documents updated.
+2022-09-08 21:32:47,172:INFO:youtube:Data inserted in mongodb
+2022-09-08 21:33:14,198:INFO:youtube:Created thumbnail urls image to base64 object
+2022-09-08 21:33:18,247:INFO:youtube:mongo_client created.
+2022-09-08 21:33:18,783:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:33:18,834:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:33:22,897:INFO:youtube:mongo_client created.
+2022-09-08 21:33:22,898:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:33:23,185:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:33:27,252:INFO:youtube:mongo_client created.
+2022-09-08 21:33:27,253:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:33:27,866:INFO:youtube:Data inserted in Video-Data.
+2022-09-08 21:33:27,866:INFO:youtube:Data inserted in mongodb
+2022-09-08 21:33:31,103:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:33:34,897:INFO:youtube:Successfully inserted Data in VIDEO_INFO
+2022-09-08 21:33:34,897:INFO:youtube:Stored each video comments in Mongodb
+2022-09-08 21:33:34,904:INFO:youtube:search_id: sudhanshukumarall 
+2022-09-08 21:33:35,766:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:33:35,766:INFO:youtube:sql select top 5 * from CHANNEL_VIDEOS where USERID = 'sudhanshukumarall';
+2022-09-08 21:33:36,801:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:33:36,801:INFO:youtube:sql select * from VIDEO_INFO where USERID = 'sudhanshukumarall';
+2022-09-08 21:33:41,898:INFO:youtube:mongo_client created.
+2022-09-08 21:33:42,386:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:33:42,429:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:33:46,683:INFO:youtube:mongo_client created.
+2022-09-08 21:33:46,683:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:33:47,055:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:33:51,110:INFO:youtube:mongo_client created.
+2022-09-08 21:33:51,110:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:33:51,110:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:46:47,876:INFO:youtube:Connected with snowflakes
+2022-09-08 21:46:48,570:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:46:48,570:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UC01hryxc5xupbm5RngcuxoA';
+2022-09-08 21:47:25,851:INFO:youtube:Connected with snowflakes
+2022-09-08 21:47:36,985:INFO:youtube:Open the URL
+2022-09-08 21:47:37,743:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:47:37,743:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'UCb1GdqUqArXMQ3RS86lqqOw';
+2022-09-08 21:47:39,386:INFO:youtube:Video deleted in local folder
+2022-09-08 21:47:39,392:INFO:youtube:service created successfully drive
+2022-09-08 21:47:39,392:INFO:youtube:Created G Drive connector
+2022-09-08 21:47:55,232:INFO:youtube:Downloading video Java Live Community Session by Hyder Abbas | Day 03
+2022-09-08 21:48:04,928:INFO:youtube:Uploaded file to https://drive.google.com/open?id=1l8ynI49GKD6QX9ikL-NgyMDkZy4r1AVM
+2022-09-08 21:48:04,928:INFO:youtube:Video Uploaded in G Drive: https://drive.google.com/open?id=1l8ynI49GKD6QX9ikL-NgyMDkZy4r1AVM
+2022-09-08 21:48:12,966:INFO:youtube:Stored channel name and video details in database
+2022-09-08 21:48:13,701:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:48:20,101:INFO:youtube:Successfully inserted Data in CHANNEL_VIDEOS
+2022-09-08 21:48:20,101:INFO:youtube:Stored each video details in database
+2022-09-08 21:48:20,101:INFO:youtube:Urls: ['/watch?v=jmV9WX3jjoE']
+2022-09-08 21:48:44,037:INFO:youtube:Created thumbnail urls image to base64 object
+2022-09-08 21:48:48,079:INFO:youtube:mongo_client created.
+2022-09-08 21:48:48,461:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:48:48,484:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:48:52,515:INFO:youtube:mongo_client created.
+2022-09-08 21:48:52,516:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:48:53,009:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:48:57,050:INFO:youtube:mongo_client created.
+2022-09-08 21:48:57,050:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:48:57,540:INFO:youtube:Data inserted in Video-Data.
+2022-09-08 21:48:57,541:INFO:youtube:Data inserted in mongodb
+2022-09-08 21:49:01,497:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:49:05,806:INFO:youtube:Successfully inserted Data in VIDEO_INFO
+2022-09-08 21:49:05,806:INFO:youtube:Stored each video comments in Mongodb
+2022-09-08 21:49:05,815:INFO:youtube:search_id: UCb1GdqUqArXMQ3RS86lqqOw 
+2022-09-08 21:49:06,518:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:49:06,518:INFO:youtube:sql select top 1 * from CHANNEL_VIDEOS where USERID = 'UCb1GdqUqArXMQ3RS86lqqOw';
+2022-09-08 21:49:07,771:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:49:07,771:INFO:youtube:sql select * from VIDEO_INFO where USERID = 'UCb1GdqUqArXMQ3RS86lqqOw';
+2022-09-08 21:49:12,267:INFO:youtube:mongo_client created.
+2022-09-08 21:49:12,736:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:49:12,772:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:49:16,824:INFO:youtube:mongo_client created.
+2022-09-08 21:49:16,824:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:49:17,201:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:49:21,253:INFO:youtube:mongo_client created.
+2022-09-08 21:49:21,253:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:49:21,254:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:55:23,472:INFO:youtube:Connected with snowflakes
+2022-09-08 21:55:24,171:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:55:24,171:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'krishnaik06';
+2022-09-08 21:55:24,328:INFO:youtube:Data is available in database
+2022-09-08 21:55:24,334:INFO:youtube:search_id: krishnaik06 
+2022-09-08 21:55:25,126:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:55:25,126:INFO:youtube:sql select top 1 * from CHANNEL_VIDEOS where USERID = 'krishnaik06';
+2022-09-08 21:55:26,049:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:55:26,049:INFO:youtube:sql select * from VIDEO_INFO where USERID = 'krishnaik06';
+2022-09-08 21:55:31,375:INFO:youtube:mongo_client created.
+2022-09-08 21:55:31,847:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:55:31,896:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:55:35,942:INFO:youtube:mongo_client created.
+2022-09-08 21:55:35,942:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:55:36,287:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:55:40,360:INFO:youtube:mongo_client created.
+2022-09-08 21:55:40,361:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:55:40,361:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:56:17,446:INFO:youtube:Connected with snowflakes
+2022-09-08 21:56:18,413:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:56:18,413:INFO:youtube:sql select * from CHANNEL_VIDEOS where USERID = 'saurabhexponent1';
+2022-09-08 21:56:18,569:INFO:youtube:Data is available in database
+2022-09-08 21:56:18,576:INFO:youtube:search_id: saurabhexponent1 
+2022-09-08 21:56:19,306:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:56:19,306:INFO:youtube:sql select top 5 * from CHANNEL_VIDEOS where USERID = 'saurabhexponent1';
+2022-09-08 21:56:20,157:INFO:youtube:Connected with snowflakes.
+2022-09-08 21:56:20,157:INFO:youtube:sql select * from VIDEO_INFO where USERID = 'saurabhexponent1';
+2022-09-08 21:56:25,170:INFO:youtube:mongo_client created.
+2022-09-08 21:56:25,682:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:56:25,720:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:56:29,777:INFO:youtube:mongo_client created.
+2022-09-08 21:56:29,777:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:56:30,115:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:56:34,172:INFO:youtube:mongo_client created.
+2022-09-08 21:56:34,173:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:56:34,173:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:56:38,590:INFO:youtube:mongo_client created.
+2022-09-08 21:56:39,042:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:56:39,084:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:56:43,313:INFO:youtube:mongo_client created.
+2022-09-08 21:56:43,314:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:56:43,645:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:56:47,708:INFO:youtube:mongo_client created.
+2022-09-08 21:56:47,708:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:56:47,708:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:56:52,327:INFO:youtube:mongo_client created.
+2022-09-08 21:56:52,773:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:56:52,810:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:56:56,867:INFO:youtube:mongo_client created.
+2022-09-08 21:56:56,868:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:56:57,263:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:57:01,328:INFO:youtube:mongo_client created.
+2022-09-08 21:57:01,328:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:57:01,328:INFO:youtube:Record found in Video-Data.
+2022-09-08 21:57:05,696:INFO:youtube:mongo_client created.
+2022-09-08 21:57:06,184:INFO:youtube:database YouTube-Scrapper is present.
+2022-09-08 21:57:06,228:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:57:10,280:INFO:youtube:mongo_client created.
+2022-09-08 21:57:10,280:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:57:10,983:INFO:youtube:collection Video-Data is present.
+2022-09-08 21:57:15,156:INFO:youtube:mongo_client created.
+2022-09-08 21:57:15,156:INFO:youtube:mongo_client connection closed.
+2022-09-08 21:57:15,156:INFO:youtube:Record found in Video-Data.

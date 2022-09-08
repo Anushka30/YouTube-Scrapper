@@ -64,32 +64,60 @@ def index():
                 )
 
             else:
-                youtube_object = YoutubeScrapper(
-                    executable_path=ChromeDriverManager().install(),
-                    chrome_options=chrome_options,
-                    logger=logger,
-                )
-                no_rec = expected_video
-                youtube_object.open_url(search_string + "/videos")
-                logger.info("Open the URL")
-                channel_df = conn.select_data("CHANNEL_VIDEOS", search_id)
-                search_object = youtube_object.search_video(search_id, no_rec, channel_df)
-                logger.info("Stored channel name and video details in database")
-                conn = SnowflakesConn(logger)
-                conn.insert_data(search_object, "CHANNEL_VIDEOS")
-                logger.info("Stored each video details in database")
-                res = youtube_object.video_info(search_id)
+                return redirect(url_for("nodata"))
+
+        except Exception as err:
+            logger.error(f"Error {err}")
+            logger.error(traceback.format_exc())
+    else:
+        return render_template("index.html")
+
+
+@app.route("/new_request", methods=["GET", "POST"])
+@cross_origin()
+def new_request():
+    """
+    This function is used to display video info on UI and if data is not available in database then fetch the data
+    from YouTube video and store in database.
+    Returns:
+
+    """
+    if request.method == "POST":
+        expected_video = int(request.form["expected_video"])
+        search_string = request.form["content"].replace(
+            " ", ""
+        )  # obtaining the search string entered in the form
+        try:
+            search_id = search_string.split("/")[-1]
+            conn = SnowflakesConn(logger)
+            logger.info("Connected with snowflakes")
+            youtube_object = YoutubeScrapper(
+                executable_path=ChromeDriverManager().install(),
+                chrome_options=chrome_options,
+                logger=logger,
+            )
+            no_rec = expected_video
+            youtube_object.open_url(search_string + "/videos")
+            logger.info("Open the URL")
+            channel_df = conn.select_data("CHANNEL_VIDEOS", search_id)
+            search_object = youtube_object.search_video(search_id, no_rec, channel_df)
+            logger.info("Stored channel name and video details in database")
+            conn = SnowflakesConn(logger)
+            conn.insert_data(search_object, "CHANNEL_VIDEOS")
+            logger.info("Stored each video details in database")
+            res = youtube_object.video_info(search_id)
+            if len(res) != 0:
                 conn.insert_data(res, "VIDEO_INFO")
                 logger.info("Stored each video comments in Mongodb")
 
                 return redirect(
                     url_for(".results", messages=search_id, expected_val=expected_video)
                 )
+            else:
+                return "Not enough videos"
         except Exception as err:
-            logger.error(f"Error {err}")
+            logger.error(f"Error! {err}")
             logger.error(traceback.format_exc())
-    else:
-        return render_template("index.html")
 
 
 @app.route("/results")
@@ -138,6 +166,30 @@ def results():
     except Exception as err:
         logger.error(f"Error! {err}")
         logger.error(traceback.format_exc())
+
+
+@app.route("/nodata")  # route to display the home page
+@cross_origin()
+def nodata():
+    """
+    This function is render to error page.
+    Returns:
+
+    """
+
+    return render_template("error.html")
+
+
+@app.route("/feedback")  # route to display the home page
+@cross_origin()
+def feedback():
+    """
+    This function is render to error page.
+    Returns:
+
+    """
+
+    return render_template("new_request.html")
 
 
 if __name__ == "__main__":

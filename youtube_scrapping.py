@@ -127,6 +127,8 @@ class YoutubeScrapper:
                     continue
                 self.logger.info(f"Video Uploaded in G Drive: {self.gdrive_url}")
 
+            time.sleep(4)
+
             data = {
                 "USERID": self.user_id,
                 "CHANNEL_NAME": self.channel_name_list,
@@ -138,6 +140,8 @@ class YoutubeScrapper:
                 "VIDEO_DOWNLOAD_LINK": self.gdrive_url_list,
             }
             df = pd.DataFrame(data)
+            time.sleep(4)
+
             df.drop_duplicates(subset=["VIDEO_TITLE", "VIDEO_LINK"], keep=False, inplace=True)
 
             return df
@@ -195,11 +199,11 @@ class YoutubeScrapper:
                     data = re.search(r"var ytInitialData = ({.*?});", soup.prettify()).group(1)
                     data_json = json.loads(data)
                     videoPrimaryInfoRenderer = \
-                    data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents'][0][
-                        'videoPrimaryInfoRenderer']
+                        data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents'][0][
+                            'videoPrimaryInfoRenderer']
                     videoSecondaryInfoRenderer = \
-                    data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents'][1][
-                        'videoSecondaryInfoRenderer']
+                        data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents'][1][
+                            'videoSecondaryInfoRenderer']
                     # number of likes
                     likes_label = videoPrimaryInfoRenderer['videoActions']['menuRenderer']['topLevelButtons'][0][
                         'toggleButtonRenderer']['defaultText']['accessibility']['accessibilityData'][
@@ -287,30 +291,3 @@ class YoutubeScrapper:
         self.logger.info("Created thumbnail urls image to base64 object")
 
         return self.im_b64
-
-    @staticmethod
-    def likes_count(soup):
-        """
-        This function is used to get no of like in video.
-        Args:
-            soup: BeautifulSoup object
-
-        Returns:
-
-        """
-        data = re.search(r"var ytInitialData = ({.*?});", soup.prettify()).group(1)
-        data_json = json.loads(data)
-        videoPrimaryInfoRenderer = data_json["contents"]["twoColumnWatchNextResults"][
-            "results"
-        ]["results"]["contents"][0]["videoPrimaryInfoRenderer"]
-        # number of likes
-        likes_label = videoPrimaryInfoRenderer["videoActions"]["menuRenderer"][
-            "topLevelButtons"
-        ][0]["toggleButtonRenderer"]["defaultText"]["accessibility"][
-            "accessibilityData"
-        ][
-            "label"
-        ]  # "No likes" or "###,### likes"
-        likes_str = likes_label.split(" ")[0].replace(",", "")
-        total_likes = "0" if likes_str == "No" else likes_str
-        return total_likes

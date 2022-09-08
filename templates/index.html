@@ -15,25 +15,42 @@
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/"><b>Search</b></a>
+                    <a class="nav-link"><b>Search</b></a>
                 </li>
             </ul>
         </nav>
-        <div class="content">
-            <br>
-            <h1 style="text-align: center"><i>Search YouTube Channel</i></h1><br>
-            <h4 style="text-align: center"><b>Note: </b>Please enter the channel url like
-                "https://www.youtube.com/c/Telusko"
+        <div class="row">
+            <div class="content">
+                <br>
+                <h1 style="text-align: center"><i>Search YouTube Channel</i></h1><br>
+                <h4 style="text-align: center"><b>Note: </b>Please enter the channel url like
+                    "https://www.youtube.com/c/Telusko"
                 </h4><br><br>
-            <div class="form">
-            <form action="/video" method="POST">
-                <label><b>Enter Youtube channel link:</b></label> <input type="text" name="content"
-                                                                         id="content"><br><br>
-                <label><b>Enter expected video count:</b></label> <input type="text" name="expected_video"
-                                                                         id="expected_video"><br><br>
-                <input type="submit" value="Search">
-            </form>
+                <div class="col">
+                    <div class="form">
+                        <form action="/video" method="POST">
+                            <label><b>Enter Youtube channel link:</b></label> <input type="text" name="content"
+                                                                                     id="content"><br><br>
+                            <label><b>Enter expected video count:</b></label> <input type="text" name="expected_video"
+                                                                                     id="expected_video"><br><br>
+                            <input type="submit" value="Search">
+
+                        </form>
+
+                        <div style="text-align: center">
+                            <p class="buttons">
+                                <button class="button is-small btn-outline-primary mr-1"
+                                        onclick="window.open('https://github.com/Anushka30/YouTube-Scrapper', '_blank')">
+                            <span class="icon is-small">
+                                <i class="fab fa-github"></i>
+                            </span>
+                                    <span>GitHub</span>
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
