@@ -42,8 +42,8 @@ class ThreadClass:
         thread = threading.Thread(target=self.run, args=())
         thread.daemon = True  # Daemonize thread
         thread.start()  # Start the execution
-        time.sleep(2)
-        thread.join()
+        # time.sleep(2)
+        thread.join(timeout=1)
 
     def run(self):
         global res, status
