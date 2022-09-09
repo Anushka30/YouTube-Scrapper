@@ -45,7 +45,7 @@ class ThreadClass:
     def run(self):
         global res, status
         status = False
-        res = thread_work(self.search_string, self.expected_video)
+        thread_work(self.search_string, self.expected_video)
         logger.info("Thread run completed")
         status = True
 
@@ -107,12 +107,11 @@ def index():
 
     """
     if request.method == "POST":
-        # global status
-        # ## To maintain the internal server issue on heroku
-        # if status != True:
-        #     return "This website is executing some process. Kindly try after some time..."
-        # else:
-        #     status = True
+        global status
+        if not status:
+            return "This website is executing some process. Kindly try after some time..."
+        else:
+            status = True
         expected_video = int(request.form["expected_video"])
         search_string = request.form["content"].replace(
             " ", ""
@@ -194,26 +193,24 @@ def results():
     Returns:
 
     """
+    global res
     search_id = request.args["messages"]  # counterpart for url_for()
     fetch_count = request.args["expected_val"]  # counterpart for url_for()
-
     logger.info(f"search_id: {search_id} ")
 
     try:
-        # ThreadClass(search_id, fetch_count)
-        thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
-        thread.start()
-        thread.join()
-        final_data = queue.dequeue()
-        return render_template("results.html", data=final_data)
-
-        # if res is not None:
-        #     final_data = res
-        #     # print(final_data)
-        #     return render_template("results.html", data=final_data)
-        # else:
-        #     return render_template("results.html", data=None)
-
+        ThreadClass(search_id, fetch_count)
+        # thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
+        # thread.start()
+        # thread.join()
+        res = queue.dequeue()
+        if res is not None:
+            final_data = res
+            print(final_data)
+            res = None
+            return render_template("results.html", data=final_data)
+        else:
+            return render_template("results.html", data=None)
     except Exception as err:
         logger.error(f"Error! {err}")
         logger.error(traceback.format_exc())

@@ -56,7 +56,7 @@
         </tr>
         </thead>
         <tbody>
-
+        {% if data is not none %}
         {% for detail in data %}
         <tr>
 
@@ -72,6 +72,8 @@
             <td>{{detail['LIKES']}}</td>
             <td>{{detail['COMMENTS']}}</td>
             {% endfor %}
+            {% endif %}
+
         </tr>
         </tbody>
     </table>
