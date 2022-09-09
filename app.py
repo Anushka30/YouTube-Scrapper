@@ -40,7 +40,7 @@ class ThreadClass:
         thread = threading.Thread(target=self.run, args=())
         thread.daemon = True  # Daemonize thread
         thread.start()  # Start the execution
-        thread.join()
+        # thread.join()
 
     def run(self):
         global res, status
