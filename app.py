@@ -42,13 +42,16 @@ class ThreadClass:
         thread = threading.Thread(target=self.run, args=())
         thread.daemon = True  # Daemonize thread
         thread.start()  # Start the execution
-        # time.sleep(2)
-        thread.join(timeout=1)
+        time.sleep(2)
+        thread.join()
+        # if thread.is_alive():
+        # # timeout expired, thread is still running
+        # else:
 
     def run(self):
         global res, status
         status = False
-        res = thread_work(self.search_string, self.expected_video, self.youtube_object)
+        thread_work(self.search_string, self.expected_video, self.youtube_object)
         logger.info("Thread run completed")
         status = True
 
@@ -84,8 +87,8 @@ def thread_work(search_string, fetch_count, youtube_object):
         df2.drop("VIDEO_TITLE", axis=1, inplace=True)
         df3 = pd.concat([df1, df2], axis=1, join='inner')
         final_data = df3.to_dict("records")
-        # queue.enque(final_data)
-        return final_data
+        queue.enque(final_data)
+        # return final_data
 
     except Exception as err:
         logger.error(f"Error! {err}")
@@ -216,9 +219,10 @@ def result():
         # thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
         # thread.start()
         # thread.join()
+        res = queue.dequeue()
         if res is not None:
             final_data = res
-            logger.info("Data fected from db.")
+            logger.info("Data fetched from db.")
             print(final_data)
             res = None
             return render_template("results.html", data=final_data)
