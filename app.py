@@ -40,6 +40,7 @@ class ThreadClass:
         thread = threading.Thread(target=self.run, args=())
         thread.daemon = True  # Daemonize thread
         thread.start()  # Start the execution
+        thread.join()
 
     def run(self):
         global res, status
@@ -80,6 +81,7 @@ def thread_work(search_id, fetch_count):
         df3 = pd.concat([df1, df2], axis=1)
         final_data = df3.to_dict("records")
         queue.enque(final_data)
+
     except Exception as err:
         logger.error(f"Error! {err}")
         logger.error(traceback.format_exc())
@@ -129,6 +131,7 @@ def index():
                 )
             else:
                 return redirect(url_for("nodata"))
+
         except Exception as err:
             logger.error(f"Error {err}")
             logger.error(traceback.format_exc())
@@ -183,7 +186,7 @@ def new_request():
             logger.error(traceback.format_exc())
 
 
-@app.route("/result", methods=['GET', 'POST'])
+@app.route("/result", methods=['GET'])
 @cross_origin()
 def result():
     """
@@ -239,4 +242,4 @@ def feedback():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, threaded=False)
+    app.run()
