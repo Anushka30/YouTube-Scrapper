@@ -1,4 +1,5 @@
 import traceback
+import threading
 import warnings
 
 import pandas as pd
@@ -10,6 +11,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from config import conns
 from logger_class import getLog
 from mongodb_connection import MongoDBConnect
+from queue_class import Queue
 from snowflakes_connection import SnowflakesConn
 from youtube_scrapping import YoutubeScrapper
 
@@ -24,6 +26,44 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("disable-dev-shm-usage")
+
+queue = Queue()
+
+
+def thread_work(search_id, fetch_count):
+    try:
+        global comment_df
+        conn = SnowflakesConn(logger)
+        mongo_client = MongoDBConnect(
+            username=conns["MongoDB"]["UserName"], password=conns["MongoDB"]["Password"], logger=logger
+        )
+        channel_data_df = conn.select_no_data("CHANNEL_VIDEOS", search_id, fetch_count)
+        video_data_df = conn.select_data("VIDEO_INFO", search_id)
+        df1 = pd.merge(
+            channel_data_df,
+            video_data_df,
+            how="inner",
+            on=["VIDEO_LINK", "VIDEO_TITLE"],
+        )
+        titles_list = df1["VIDEO_TITLE"].unique()
+        df2 = pd.DataFrame(columns=["VIDEO_TITLE", "COMMENTS"])
+
+        for i in titles_list:
+            comment_row = mongo_client.find_records(
+                db_name=conns["MongoDB"]["Database"],
+                collection_name=conns["MongoDB"]["CollectionName"],
+                title=i,
+            )
+            for j in comment_row:
+                comment_df = pd.DataFrame(j)
+            df2 = df2.append(comment_df, ignore_index=True)
+        df2.drop("VIDEO_TITLE", axis=1, inplace=True)
+        df3 = pd.concat([df1, df2], axis=1)
+        final_data = df3.to_dict("records")
+        queue.enque(final_data)
+    except Exception as err:
+        logger.error(f"Error! {err}")
+        logger.error(traceback.format_exc())
 
 
 @app.route("/", methods=["GET"])  # route to display the home page
@@ -128,40 +168,18 @@ def results():
     Returns:
 
     """
-    global comment_df
     search_id = request.args["messages"]  # counterpart for url_for()
     fetch_count = request.args["expected_val"]  # counterpart for url_for()
 
     logger.info(f"search_id: {search_id} ")
 
     try:
-        conn = SnowflakesConn(logger)
-        mongo_client = MongoDBConnect(
-            username=conns["MongoDB"]["UserName"], password=conns["MongoDB"]["Password"], logger=logger
-        )
-        channel_data_df = conn.select_no_data("CHANNEL_VIDEOS", search_id, fetch_count)
-        video_data_df = conn.select_data("VIDEO_INFO", search_id)
-        df1 = pd.merge(
-            channel_data_df,
-            video_data_df,
-            how="inner",
-            on=["VIDEO_LINK", "VIDEO_TITLE"],
-        )
-        titles_list = df1["VIDEO_TITLE"].unique()
-        df2 = pd.DataFrame(columns=["VIDEO_TITLE", "COMMENTS"])
+        thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
+        thread.start()
+        thread.join()
 
-        for i in titles_list:
-            comment_row = mongo_client.find_records(
-                db_name=conns["MongoDB"]["Database"],
-                collection_name=conns["MongoDB"]["CollectionName"],
-                title=i,
-            )
-            for j in comment_row:
-                comment_df = pd.DataFrame(j)
-            df2 = df2.append(comment_df, ignore_index=True)
-        df2.drop("VIDEO_TITLE", axis=1, inplace=True)
-        df3 = pd.concat([df1, df2], axis=1)
-        final_data = df3.to_dict("records")
+        final_data = queue.dequeue()
+        print(final_data)
         return render_template("results.html", data=final_data)
     except Exception as err:
         logger.error(f"Error! {err}")
@@ -193,4 +211,4 @@ def feedback():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(threaded=True)
