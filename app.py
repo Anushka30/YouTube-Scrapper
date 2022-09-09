@@ -177,7 +177,7 @@ def new_request():
                 logger.info("Stored each video comments in Mongodb")
 
                 return redirect(
-                    url_for(".results", messages=search_id, expected_val=expected_video)
+                    url_for("results", messages=search_id, expected_val=expected_video)
                 )
             else:
                 return "Not enough videos"
@@ -186,7 +186,7 @@ def new_request():
             logger.error(traceback.format_exc())
 
 
-@app.route("/results", methods=['GET'])
+@app.route("/results", methods=['GET', 'POST'])
 @cross_origin()
 def results():
     """
