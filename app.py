@@ -28,6 +28,26 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("disable-dev-shm-usage")
 
 queue = Queue()
+res = None
+status = True
+
+
+class ThreadClass:
+
+    def __init__(self, expected_video, search_string):
+        self.expected_video = expected_video
+        self.search_string = search_string
+
+        thread = threading.Thread(target=self.run, args=())
+        thread.daemon = True  # Daemonize thread
+        thread.start()  # Start the execution
+
+    def run(self):
+        global res, status
+        status = False
+        res = thread_work(self.search_string, self.expected_video)
+        logger.info("Thread run completed")
+        status = True
 
 
 def thread_work(search_id, fetch_count):
@@ -60,7 +80,7 @@ def thread_work(search_id, fetch_count):
         df2.drop("VIDEO_TITLE", axis=1, inplace=True)
         df3 = pd.concat([df1, df2], axis=1)
         final_data = df3.to_dict("records")
-        queue.enque(final_data)
+        return final_data
     except Exception as err:
         logger.error(f"Error! {err}")
         logger.error(traceback.format_exc())
@@ -87,6 +107,12 @@ def index():
 
     """
     if request.method == "POST":
+        global status
+        ## To maintain the internal server issue on heroku
+        if status != True:
+            return "This website is executing some process. Kindly try after some time..."
+        else:
+            status = True
         expected_video = int(request.form["expected_video"])
         search_string = request.form["content"].replace(
             " ", ""
@@ -160,7 +186,7 @@ def new_request():
             logger.error(traceback.format_exc())
 
 
-@app.route("/results")
+@app.route("/results", methods=['GET'])
 @cross_origin()
 def results():
     """
@@ -174,13 +200,17 @@ def results():
     logger.info(f"search_id: {search_id} ")
 
     try:
-        thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
-        thread.start()
-        thread.join()
+        ThreadClass(search_id, fetch_count)
+        # thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
+        # thread.start()
+        # thread.join()
+        if res is not None:
+            final_data = res
+            # print(final_data)
+            return render_template("results.html", data=final_data)
+        else:
+            return render_template("results.html", data=None)
 
-        final_data = queue.dequeue()
-        print(final_data)
-        return render_template("results.html", data=final_data)
     except Exception as err:
         logger.error(f"Error! {err}")
         logger.error(traceback.format_exc())
