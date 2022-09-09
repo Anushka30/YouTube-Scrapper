@@ -37,7 +37,6 @@ class ThreadClass:
     def __init__(self, search_string, expected_video):
         self.expected_video = expected_video
         self.search_string = search_string
-
         thread = threading.Thread(target=self.run, args=())
         thread.daemon = True  # Daemonize thread
         thread.start()  # Start the execution
@@ -124,10 +123,10 @@ def index():
             video_count = channel_df["USERID"].count()
             if video_count > expected_video:
                 logger.info("Data is available in database")
+                ThreadClass(search_id, expected_video)
                 return redirect(
-                    url_for("results", messages=search_id, expected_val=expected_video)
+                    url_for("results")
                 )
-
             else:
                 return redirect(url_for("nodata"))
 
@@ -194,12 +193,12 @@ def results():
 
     """
     global res
-    search_id = request.args["messages"]  # counterpart for url_for()
-    fetch_count = request.args["expected_val"]  # counterpart for url_for()
-    logger.info(f"search_id: {search_id} ")
+    # search_id = request.args["messages"]  # counterpart for url_for()
+    # fetch_count = request.args["expected_val"]  # counterpart for url_for()
+    # logger.info(f"search_id: {search_id} ")
 
     try:
-        ThreadClass(search_id, fetch_count)
+
         # thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
         # thread.start()
         # thread.join()
