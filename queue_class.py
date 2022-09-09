@@ -1,4 +1,4 @@
-class Queue(object):
+class Queuet:
 
     def __init__(self):
         self.item = []

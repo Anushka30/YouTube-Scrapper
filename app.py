@@ -1,5 +1,6 @@
 import traceback
 import threading
+import time
 import warnings
 
 import pandas as pd
@@ -11,7 +12,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from config import conns
 from logger_class import getLog
 from mongodb_connection import MongoDBConnect
-from queue_class import Queue
+from queue_class import Queuet
 from snowflakes_connection import SnowflakesConn
 from youtube_scrapping import YoutubeScrapper
 
@@ -27,7 +28,7 @@ chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("disable-dev-shm-usage")
 
-queue = Queue()
+queue = Queuet()
 res = None
 status = True
 
@@ -37,22 +38,25 @@ class ThreadClass:
     def __init__(self, search_string, expected_video):
         self.expected_video = expected_video
         self.search_string = search_string
+        self.youtube_object = None
         thread = threading.Thread(target=self.run, args=())
         thread.daemon = True  # Daemonize thread
         thread.start()  # Start the execution
-        # thread.join()
+        time.sleep(2)
+        thread.join()
 
     def run(self):
         global res, status
         status = False
-        thread_work(self.search_string, self.expected_video)
+        res = thread_work(self.search_string, self.expected_video, self.youtube_object)
         logger.info("Thread run completed")
         status = True
 
 
-def thread_work(search_id, fetch_count):
+def thread_work(search_string, fetch_count, youtube_object):
     try:
         global comment_df
+        search_id = search_string.split("/")[-1]
         conn = SnowflakesConn(logger)
         mongo_client = MongoDBConnect(
             username=conns["MongoDB"]["UserName"], password=conns["MongoDB"]["Password"], logger=logger
@@ -78,27 +82,28 @@ def thread_work(search_id, fetch_count):
                 comment_df = pd.DataFrame(j)
             df2 = df2.append(comment_df, ignore_index=True)
         df2.drop("VIDEO_TITLE", axis=1, inplace=True)
-        df3 = pd.concat([df1, df2], axis=1)
+        df3 = pd.concat([df1, df2], axis=1, join='inner')
         final_data = df3.to_dict("records")
-        queue.enque(final_data)
+        # queue.enque(final_data)
+        return final_data
 
     except Exception as err:
         logger.error(f"Error! {err}")
         logger.error(traceback.format_exc())
 
 
-@app.route("/", methods=["GET"])  # route to display the home page
-@cross_origin()
-def home_page():
-    """
-    This function is render to index page.
-    Returns:
+# @app.route("/", methods=["GET"])  # route to display the home page
+# @cross_origin()
+# def home_page():
+#     """
+#     This function is render to index page.
+#     Returns:
+#
+#     """
+#     return render_template("index.html")
 
-    """
-    return render_template("index.html")
 
-
-@app.route("/video", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 @cross_origin()
 def index():
     """
@@ -121,11 +126,18 @@ def index():
             search_id = search_string.split("/")[-1]
             conn = SnowflakesConn(logger)
             logger.info("Connected with snowflakes")
+            # youtube_object = YoutubeScrapper(
+            #     executable_path=ChromeDriverManager().install(),
+            #     chrome_options=chrome_options,
+            #     logger=logger,
+            # )
+            # # youtube_object.open_url(search_string + "/videos")
+            # logger.info("Open the URL")
             channel_df = conn.select_data("CHANNEL_VIDEOS", search_id)
             video_count = channel_df["USERID"].count()
             if video_count > expected_video:
+                ThreadClass(search_string, expected_video)
                 logger.info("Data is available in database")
-                ThreadClass(search_id, expected_video)
                 return redirect(
                     url_for("result")
                 )
@@ -204,9 +216,9 @@ def result():
         # thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
         # thread.start()
         # thread.join()
-        res = queue.dequeue()
         if res is not None:
             final_data = res
+            logger.info("Data fected from db.")
             print(final_data)
             res = None
             return render_template("results.html", data=final_data)
@@ -242,4 +254,4 @@ def feedback():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(use_reloader=False)
