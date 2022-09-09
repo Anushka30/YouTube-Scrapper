@@ -125,11 +125,10 @@ def index():
                 logger.info("Data is available in database")
                 ThreadClass(search_id, expected_video)
                 return redirect(
-                    url_for("results")
+                    url_for("result")
                 )
             else:
                 return redirect(url_for("nodata"))
-
         except Exception as err:
             logger.error(f"Error {err}")
             logger.error(traceback.format_exc())
@@ -175,7 +174,7 @@ def new_request():
                 logger.info("Stored each video comments in Mongodb")
 
                 return redirect(
-                    url_for("results", messages=search_id, expected_val=expected_video)
+                    url_for("result", messages=search_id, expected_val=expected_video)
                 )
             else:
                 return "Not enough videos"
@@ -184,9 +183,9 @@ def new_request():
             logger.error(traceback.format_exc())
 
 
-@app.route("/results", methods=['GET', 'POST'])
+@app.route("/result", methods=['GET', 'POST'])
 @cross_origin()
-def results():
+def result():
     """
     This function is used to get all video info and simply on ui
     Returns:
@@ -240,4 +239,4 @@ def feedback():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, threaded=False)
