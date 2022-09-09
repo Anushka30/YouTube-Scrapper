@@ -34,7 +34,7 @@ status = True
 
 class ThreadClass:
 
-    def __init__(self, expected_video, search_string):
+    def __init__(self, search_string, expected_video):
         self.expected_video = expected_video
         self.search_string = search_string
 
@@ -80,7 +80,7 @@ def thread_work(search_id, fetch_count):
         df2.drop("VIDEO_TITLE", axis=1, inplace=True)
         df3 = pd.concat([df1, df2], axis=1)
         final_data = df3.to_dict("records")
-        return final_data
+        queue.enque(final_data)
     except Exception as err:
         logger.error(f"Error! {err}")
         logger.error(traceback.format_exc())
@@ -107,12 +107,12 @@ def index():
 
     """
     if request.method == "POST":
-        global status
-        ## To maintain the internal server issue on heroku
-        if status != True:
-            return "This website is executing some process. Kindly try after some time..."
-        else:
-            status = True
+        # global status
+        # ## To maintain the internal server issue on heroku
+        # if status != True:
+        #     return "This website is executing some process. Kindly try after some time..."
+        # else:
+        #     status = True
         expected_video = int(request.form["expected_video"])
         search_string = request.form["content"].replace(
             " ", ""
@@ -200,16 +200,19 @@ def results():
     logger.info(f"search_id: {search_id} ")
 
     try:
-        ThreadClass(search_id, fetch_count)
-        # thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
-        # thread.start()
-        # thread.join()
-        if res is not None:
-            final_data = res
-            # print(final_data)
-            return render_template("results.html", data=final_data)
-        else:
-            return render_template("results.html", data=None)
+        # ThreadClass(search_id, fetch_count)
+        thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
+        thread.start()
+        thread.join()
+        final_data = queue.dequeue()
+        return render_template("results.html", data=final_data)
+
+        # if res is not None:
+        #     final_data = res
+        #     # print(final_data)
+        #     return render_template("results.html", data=final_data)
+        # else:
+        #     return render_template("results.html", data=None)
 
     except Exception as err:
         logger.error(f"Error! {err}")
