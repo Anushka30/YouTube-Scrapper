@@ -43,7 +43,7 @@ class ThreadClass:
         thread.daemon = True  # Daemonize thread
         thread.start()  # Start the execution
         # time.sleep(2)
-        thread.join(timeout=2)
+        # thread.join(timeout=2)
         # if thread.is_alive():
         # # timeout expired, thread is still running
         # else:
