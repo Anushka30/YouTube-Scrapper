@@ -94,11 +94,14 @@ class SnowflakesConn:
     def insert_data(self, ob, table_name):
 
         try:
-            if self.connection():
-                success, nchunks, nrows, _ = write_pandas(
-                    conn=self.con_eb, df=ob, table_name=table_name, quote_identifiers=False
-                )
-                self.logger.info(f"Successfully inserted Data in {table_name}")
+            if ob is not None:
+                if self.connection():
+                    success, nchunks, nrows, _ = write_pandas(
+                        conn=self.con_eb, df=ob, table_name=table_name, quote_identifiers=False
+                    )
+                    self.logger.info(f"Successfully inserted Data in {table_name}")
+            else:
+                return False
         except Exception as err:
             # self.driver.refresh()
             self.logger.error("Error! " + str(err))

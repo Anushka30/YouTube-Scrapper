@@ -94,20 +94,21 @@ class YoutubeScrapper:
             self.logger.info("Video deleted in local folder")
             gdrive_object = GdriveConnector(self.logger)
             self.logger.info("Created G Drive connector")
-            for title in titles[:record_count]:
+            for idx, title in enumerate(titles[:record_count]):
+
                 if title not in titles_list:
                     my_video = YouTube(
                         conns["Links"]["YouTube"] + video_urls[j].get("href")
                     )
                     self.channel_name_list.append(channel_name)
                     self.title_list.append(title.text)
-                    self.view.append(views[i].text)
-                    self.upload_time.append(views[i + 1].text)
-                    self.urls.append(video_urls[j].get("href"))
+                    self.view.append(views[idx].text)
+                    self.upload_time.append(views[idx + 1].text)
+                    self.urls.append(video_urls[idx].get("href"))
                     self.thumbnail.append(my_video.thumbnail_url)
                     self.user_id.append(search_id)
                     i += 2
-                    j += 1
+                    # j += 1
                     mp4files = my_video.streams.filter(file_extension="mp4")
                     time.sleep(2)
 
@@ -128,6 +129,7 @@ class YoutubeScrapper:
                         self.logger.error(f"Error! {err}")
                         self.logger.error(traceback.format_exc())
                 else:
+                    i += 2
                     continue
                 self.logger.info(f"Video Uploaded in G Drive: {self.gdrive_url}")
 

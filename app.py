@@ -147,7 +147,7 @@ def index():
             # logger.info("Open the URL")
             channel_df = conn.select_data("CHANNEL_VIDEOS", search_id)
             video_count = channel_df["USERID"].count()
-            if video_count > expected_video:
+            if video_count >= expected_video:
                 ThreadClass(search_string, expected_video)
                 logger.info("Data is available in database")
                 return redirect(
@@ -178,7 +178,9 @@ def new_request():
             " ", ""
         )  # obtaining the search string entered in the form
         try:
+            print("search_string: ", search_string)
             search_id = search_string.split("/")[-1]
+            print("search_string: ", search_id)
             conn = SnowflakesConn(logger)
             logger.info("Connected with snowflakes")
             youtube_object = YoutubeScrapper(
@@ -201,10 +203,13 @@ def new_request():
                 logger.info("Stored each video comments in Mongodb")
                 ThreadClass(search_string, expected_video)
                 return redirect(
-                    url_for("result", messages=search_id, expected_val=expected_video)
+                    url_for("result")
                 )
             else:
-                return "Not enough videos"
+                ThreadClass(search_string, expected_video)
+                return redirect(
+                    url_for("result")
+                )
         except Exception as err:
             logger.error(f"Error! {err}")
             logger.error(traceback.format_exc())
@@ -218,7 +223,7 @@ def result():
     Returns:
 
     """
-    global res
+    # global res
     # search_id = request.args["messages"]  # counterpart for url_for()
     # fetch_count = request.args["expected_val"]  # counterpart for url_for()
     # logger.info(f"search_id: {search_id} ")
@@ -229,6 +234,7 @@ def result():
         # thread.start()
         # thread.join()
         res = queue.dequeue()
+        print("res")
         if res is not None:
             final_data = res
             logger.info("Data fetched from db.")
@@ -267,4 +273,4 @@ def feedback():
 
 
 if __name__ == "__main__":
-    app.run(use_reloader=True)
+    app.run(debug=True)
