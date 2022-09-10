@@ -97,15 +97,6 @@ def select_thread(search_string, fetch_count, youtube_object):
         logger.error(traceback.format_exc())
 
 
-def insert_thread(search_string, fetch_count, ):
-    """
-
-    Returns:
-
-    """
-    pass
-
-
 # @app.route("/", methods=["GET"])  # route to display the home page
 # @cross_origin()
 # def home_page():
@@ -199,9 +190,9 @@ def new_request():
             conn = SnowflakesConn(logger)
             conn.insert_data(search_object, "CHANNEL_VIDEOS")
             logger.info("Stored each video details in database")
-            res = youtube_object.video_info(search_id)
-            if len(res) != 0:
-                conn.insert_data(res, "VIDEO_INFO")
+            video_select_df = youtube_object.video_info(search_id)
+            if video_select_df is not None:
+                conn.insert_data(video_select_df, "VIDEO_INFO")
                 logger.info("Stored each video comments in Mongodb")
                 ThreadClass(search_string, expected_video)
                 return redirect(
