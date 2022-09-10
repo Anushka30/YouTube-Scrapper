@@ -88,6 +88,7 @@ class YoutubeScrapper:
             video_urls = soup.findAll("a", id="video-title")
             i = 0  # views and time
             j = 0  # urls
+            time.sleep(2)
 
             self.delete_video()
             self.logger.info("Video deleted in local folder")
@@ -108,6 +109,8 @@ class YoutubeScrapper:
                     i += 2
                     j += 1
                     mp4files = my_video.streams.filter(file_extension="mp4")
+                    time.sleep(2)
+
                     try:
                         # downloading the video
                         mp4files.first().download("downloaded_video/")
@@ -116,6 +119,7 @@ class YoutubeScrapper:
                         )
 
                         # Upload in G Drive
+                        time.sleep(2)
                         self.gdrive_url = gdrive_object.upload_video_file()
 
                         # Get G drive video link

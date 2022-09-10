@@ -43,7 +43,7 @@ class ThreadClass:
         thread.daemon = True  # Daemonize thread
         thread.start()  # Start the execution
         # time.sleep(2)
-        # thread.join(timeout=2)
+        thread.join()
         # if thread.is_alive():
         # # timeout expired, thread is still running
         # else:
@@ -51,12 +51,12 @@ class ThreadClass:
     def run(self):
         global res, status
         status = False
-        thread_work(self.search_string, self.expected_video, self.youtube_object)
+        select_thread(self.search_string, self.expected_video, self.youtube_object)
         logger.info("Thread run completed")
         status = True
 
 
-def thread_work(search_string, fetch_count, youtube_object):
+def select_thread(search_string, fetch_count, youtube_object):
     try:
         global comment_df
         search_id = search_string.split("/")[-1]
@@ -93,6 +93,15 @@ def thread_work(search_string, fetch_count, youtube_object):
     except Exception as err:
         logger.error(f"Error! {err}")
         logger.error(traceback.format_exc())
+
+
+def insert_thread(search_string, fetch_count, ):
+    """
+
+    Returns:
+
+    """
+    pass
 
 
 # @app.route("/", methods=["GET"])  # route to display the home page
@@ -190,7 +199,7 @@ def new_request():
             if len(res) != 0:
                 conn.insert_data(res, "VIDEO_INFO")
                 logger.info("Stored each video comments in Mongodb")
-
+                ThreadClass(search_string, expected_video)
                 return redirect(
                     url_for("result", messages=search_id, expected_val=expected_video)
                 )
@@ -254,8 +263,8 @@ def feedback():
 
     """
 
-    return render_template("new_request.html")
+    return render_template("new_requests.html")
 
 
 if __name__ == "__main__":
-    app.run(use_reloader=False)
+    app.run(use_reloader=True)
