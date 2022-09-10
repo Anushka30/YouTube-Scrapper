@@ -27,7 +27,6 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("disable-dev-shm-usage")
-chrome_options.add_argument("window-size=1400,900")
 chrome_options.add_argument("--remote-debugging-port=9222")
 
 queue = Queuet()
@@ -36,29 +35,39 @@ status = True
 
 
 class ThreadClass:
+    """
+    Ths class to created to run the task in background
+    """
 
     def __init__(self, search_string, expected_video):
+        """
+        This function is used to initialize the variables.
+        Args:
+            search_string:
+            expected_video:
+        """
         self.expected_video = expected_video
         self.search_string = search_string
-        self.youtube_object = None
         thread = threading.Thread(target=self.run, args=())
         thread.daemon = True  # Daemonize thread
         thread.start()  # Start the execution
         # time.sleep(2)
-        # thread.join()
-        # if thread.is_alive():
-        # # timeout expired, thread is still running
-        # else:
+        thread.join()
 
     def run(self):
+        """
+        This function is used to run the task.
+        Returns:
+
+        """
         global res, status
         status = False
-        select_thread(self.search_string, self.expected_video, self.youtube_object)
+        select_thread(self.search_string, self.expected_video)
         logger.info("Thread run completed")
         status = True
 
 
-def select_thread(search_string, fetch_count, youtube_object):
+def select_thread(search_string, fetch_count):
     try:
         global comment_df
         search_id = search_string.split("/")[-1]
@@ -97,17 +106,6 @@ def select_thread(search_string, fetch_count, youtube_object):
         logger.error(traceback.format_exc())
 
 
-# @app.route("/", methods=["GET"])  # route to display the home page
-# @cross_origin()
-# def home_page():
-#     """
-#     This function is render to index page.
-#     Returns:
-#
-#     """
-#     return render_template("index.html")
-
-
 @app.route("/", methods=["GET", "POST"])
 @cross_origin()
 def index():
@@ -131,13 +129,6 @@ def index():
             search_id = search_string.split("/")[-1]
             conn = SnowflakesConn(logger)
             logger.info("Connected with snowflakes")
-            # youtube_object = YoutubeScrapper(
-            #     executable_path=ChromeDriverManager().install(),
-            #     chrome_options=chrome_options,
-            #     logger=logger,
-            # )
-            # # youtube_object.open_url(search_string + "/videos")
-            # logger.info("Open the URL")
             channel_df = conn.select_data("CHANNEL_VIDEOS", search_id)
             video_count = channel_df["USERID"].count()
             if video_count >= expected_video:
@@ -191,7 +182,7 @@ def new_request():
             conn.insert_data(search_object, "CHANNEL_VIDEOS")
             logger.info("Stored each video details in database")
             video_select_df = youtube_object.video_info(search_id)
-            if video_select_df is not None:
+            if not video_select_df.empty:
                 conn.insert_data(video_select_df, "VIDEO_INFO")
                 logger.info("Stored each video comments in Mongodb")
                 ThreadClass(search_string, expected_video)
@@ -212,20 +203,12 @@ def new_request():
 @cross_origin()
 def result():
     """
-    This function is used to get all video info and simply on ui
+    This function is used to get all video info and simply on ui.
     Returns:
 
     """
-    # global res
-    # search_id = request.args["messages"]  # counterpart for url_for()
-    # fetch_count = request.args["expected_val"]  # counterpart for url_for()
-    # logger.info(f"search_id: {search_id} ")
-
+    global res
     try:
-
-        # thread = threading.Thread(target=thread_work, args=(search_id, fetch_count,), daemon=True)
-        # thread.start()
-        # thread.join()
         res = queue.dequeue()
         print("res")
         if res is not None:
@@ -245,7 +228,7 @@ def result():
 @cross_origin()
 def nodata():
     """
-    This function is render to error page.
+    This function is render to error page when data is not found in database.
     Returns:
 
     """
@@ -253,11 +236,11 @@ def nodata():
     return render_template("error.html")
 
 
-@app.route("/feedback")  # route to display the home page
+@app.route("/feedback")
 @cross_origin()
 def feedback():
     """
-    This function is render to error page.
+    This function is render for new request channel.
     Returns:
 
     """
