@@ -1,6 +1,6 @@
-import traceback
 import threading
 import time
+import traceback
 import warnings
 
 import pandas as pd
@@ -73,7 +73,9 @@ def select_thread(search_string, fetch_count):
         search_id = search_string.split("/")[-1]
         conn = SnowflakesConn(logger)
         mongo_client = MongoDBConnect(
-            username=conns["MongoDB"]["UserName"], password=conns["MongoDB"]["Password"], logger=logger
+            username=conns["MongoDB"]["UserName"],
+            password=conns["MongoDB"]["Password"],
+            logger=logger,
         )
         channel_data_df = conn.select_no_data("CHANNEL_VIDEOS", search_id, fetch_count)
         video_data_df = conn.select_data("VIDEO_INFO", search_id)
@@ -96,7 +98,7 @@ def select_thread(search_string, fetch_count):
                 comment_df = pd.DataFrame(j)
             df2 = df2.append(comment_df, ignore_index=True)
         df2.drop("VIDEO_TITLE", axis=1, inplace=True)
-        df3 = pd.concat([df1, df2], axis=1, join='inner')
+        df3 = pd.concat([df1, df2], axis=1, join="inner")
         final_data = df3.to_dict("records")
         queue.enque(final_data)
         # return final_data
@@ -118,7 +120,9 @@ def index():
     if request.method == "POST":
         global status
         if not status:
-            return "This website is executing some process. Kindly try after some time..."
+            return (
+                "This website is executing some process. Kindly try after some time..."
+            )
         else:
             status = True
         expected_video = int(request.form["expected_video"])
@@ -134,9 +138,7 @@ def index():
             if video_count >= expected_video:
                 ThreadClass(search_string, expected_video)
                 logger.info("Data is available in database")
-                return redirect(
-                    url_for("result")
-                )
+                return redirect(url_for("result"))
             else:
                 return redirect(url_for("nodata"))
 
@@ -158,9 +160,7 @@ def new_request():
     """
     if request.method == "POST":
         expected_video = int(request.form["expected_video"])
-        search_string = request.form["content"].replace(
-            " ", ""
-        )  # obtaining the search string entered in the form
+        search_string = request.form["content"].replace(" ", "")
         try:
             print("search_string: ", search_string)
             search_id = search_string.split("/")[-1]
@@ -182,24 +182,20 @@ def new_request():
             conn.insert_data(search_object, "CHANNEL_VIDEOS")
             logger.info("Stored each video details in database")
             video_select_df = youtube_object.video_info(search_id)
-            if not video_select_df.empty:
+            if len(video_select_df) != 0:
                 conn.insert_data(video_select_df, "VIDEO_INFO")
                 logger.info("Stored each video comments in Mongodb")
                 ThreadClass(search_string, expected_video)
-                return redirect(
-                    url_for("result")
-                )
+                return redirect(url_for("result"))
             else:
                 ThreadClass(search_string, expected_video)
-                return redirect(
-                    url_for("result")
-                )
+                return redirect(url_for("result"))
         except Exception as err:
             logger.error(f"Error! {err}")
             logger.error(traceback.format_exc())
 
 
-@app.route("/result", methods=['GET'])
+@app.route("/result", methods=["GET"])
 @cross_origin()
 def result():
     """

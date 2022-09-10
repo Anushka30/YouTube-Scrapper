@@ -1,5 +1,4 @@
 class Queuet:
-
     def __init__(self):
         self.item = []
 

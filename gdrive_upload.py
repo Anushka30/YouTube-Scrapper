@@ -97,8 +97,8 @@ class GdriveConnector:
 
                 res = (
                     self.service.files()
-                        .create(body=file_metadata, media_body=media, fields="id")
-                        .execute()
+                    .create(body=file_metadata, media_body=media, fields="id")
+                    .execute()
                 )
                 self.gdrive_link = res.get("id")
                 self.logger.info(
@@ -138,13 +138,13 @@ class GdriveConnector:
                     param["pageToken"] = page_token
                 response = (
                     self.service.files()
-                        .list(
+                    .list(
                         q="'" + self.folder_id + "' in parents",
                         pageSize=1000,
                         pageToken=page_token,
                         fields="nextPageToken, files(id, name)",
                     )
-                        .execute()
+                    .execute()
                 )
                 result.extend(response.get("files", []))
                 page_token = response.get("nextPageToken")

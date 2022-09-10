@@ -5,6 +5,7 @@ import re
 import shutil
 import time
 import traceback
+
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup as Bs
@@ -76,7 +77,9 @@ class YoutubeScrapper:
         This function helps to search video and get the video details.
         """
         try:
-            channel_df.drop_duplicates(subset=["VIDEO_TITLE", "VIDEO_LINK"], keep=False, inplace=True)
+            channel_df.drop_duplicates(
+                subset=["VIDEO_TITLE", "VIDEO_LINK"], keep=False, inplace=True
+            )
             titles_list = channel_df["VIDEO_TITLE"].unique()
             content = self.driver.page_source.encode("utf-8").strip()
             soup = Bs(content, "html.parser")
@@ -148,7 +151,9 @@ class YoutubeScrapper:
             df = pd.DataFrame(data)
             time.sleep(4)
 
-            df.drop_duplicates(subset=["VIDEO_TITLE", "VIDEO_LINK"], keep=False, inplace=True)
+            df.drop_duplicates(
+                subset=["VIDEO_TITLE", "VIDEO_LINK"], keep=False, inplace=True
+            )
 
             return df
         except Exception as err:
@@ -165,7 +170,7 @@ class YoutubeScrapper:
             mongo_client = MongoDBConnect(
                 username=conns["MongoDB"]["UserName"],
                 password=conns["MongoDB"]["Password"],
-                logger=self.logger
+                logger=self.logger,
             )
             self.logger.info(f"Urls: {self.urls}")
             self.user_id = []
@@ -202,19 +207,27 @@ class YoutubeScrapper:
                     author_div = soup.select("#content #author-text")
                     count = soup.select_one("#comments")
 
-                    data = re.search(r"var ytInitialData = ({.*?});", soup.prettify()).group(1)
+                    data = re.search(
+                        r"var ytInitialData = ({.*?});", soup.prettify()
+                    ).group(1)
                     data_json = json.loads(data)
-                    videoPrimaryInfoRenderer = \
-                        data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents'][0][
-                            'videoPrimaryInfoRenderer']
-                    videoSecondaryInfoRenderer = \
-                        data_json['contents']['twoColumnWatchNextResults']['results']['results']['contents'][1][
-                            'videoSecondaryInfoRenderer']
+                    videoPrimaryInfoRenderer = data_json["contents"][
+                        "twoColumnWatchNextResults"
+                    ]["results"]["results"]["contents"][0]["videoPrimaryInfoRenderer"]
+                    videoSecondaryInfoRenderer = data_json["contents"][
+                        "twoColumnWatchNextResults"
+                    ]["results"]["results"]["contents"][1]["videoSecondaryInfoRenderer"]
                     # number of likes
-                    likes_label = videoPrimaryInfoRenderer['videoActions']['menuRenderer']['topLevelButtons'][0][
-                        'toggleButtonRenderer']['defaultText']['accessibility']['accessibilityData'][
-                        'label']  # "No likes" or "###,### likes"
-                    likes_str = likes_label.split(' ')[0].replace(',', '')
+                    likes_label = videoPrimaryInfoRenderer["videoActions"][
+                        "menuRenderer"
+                    ]["topLevelButtons"][0]["toggleButtonRenderer"]["defaultText"][
+                        "accessibility"
+                    ][
+                        "accessibilityData"
+                    ][
+                        "label"
+                    ]  # "No likes" or "###,### likes"
+                    likes_str = likes_label.split(" ")[0].replace(",", "")
                     likes_count = "0" if likes_str == "No" else likes_str
 
                     if len(comment_div) == 0:

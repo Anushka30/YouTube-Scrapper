@@ -55,7 +55,8 @@ class SnowflakesConn:
         # CREATES TABLE CHANNEL_VIDEOS
         try:
             if self.connection():
-                self.db_cursor_eb.execute("""create IF NOT EXISTS TABLE YOUTUBE.PUBLIC.CHANNEL_VIDEOS (
+                self.db_cursor_eb.execute(
+                    """create IF NOT EXISTS TABLE YOUTUBE.PUBLIC.CHANNEL_VIDEOS (
                                     CHANNEL_NAME VARCHAR(250),
                                     VIDEO_TITLE VARCHAR(500),
                                     VIDEO_LINK VARCHAR(500),
@@ -63,7 +64,8 @@ class SnowflakesConn:
                                     THUMBNAIL VARCHAR(500),
                                     "VIEWS" VARCHAR(100),
                                     UPLOAD_TIME VARCHAR(100)
-                                );""")
+                                );"""
+                )
                 self.logger.info("CHANNEL_VIDEOS Table Created")
         except Exception as err:
             self.logger.error("Error! " + str(err))
@@ -78,13 +80,15 @@ class SnowflakesConn:
         try:
             if self.connection():
                 # CREATES TABLE VIDEO_INFO
-                self.db_cursor_eb.execute("""create IF NOT EXISTS TABLE YOUTUBE.PUBLIC.VIDEO_INFO (
+                self.db_cursor_eb.execute(
+                    """create IF NOT EXISTS TABLE YOUTUBE.PUBLIC.VIDEO_INFO (
                                         VIDEO_LINK VARCHAR(500),
                                         VIDEO_TITLE VARCHAR(500),
                                         NO_OF_COMMENTS NUMBER(9,0),
                                         COMMENTER_NAME VARCHAR(500),
                                         LIKES NUMBER(9,0)
-                                    );""")
+                                    );"""
+                )
                 self.logger.info("VIDEO_INFO Table Created")
         except Exception as err:
             # self.driver.refresh()
@@ -97,7 +101,10 @@ class SnowflakesConn:
             if ob is not None:
                 if self.connection():
                     success, nchunks, nrows, _ = write_pandas(
-                        conn=self.con_eb, df=ob, table_name=table_name, quote_identifiers=False
+                        conn=self.con_eb,
+                        df=ob,
+                        table_name=table_name,
+                        quote_identifiers=False,
                     )
                     self.logger.info(f"Successfully inserted Data in {table_name}")
             else:

@@ -14,10 +14,14 @@ class MongoDBConnect:
         """
         try:
             self.logger = logger
-            self.url = f"mongodb+srv://{username}:{password}@anushka1008.4zzw3dy.mongodb.net/?retryWrites=true&w" \
-                       f"=majority"
+            self.url = (
+                f"mongodb+srv://{username}:{password}@anushka1008.4zzw3dy.mongodb.net/?retryWrites=true&w"
+                f"=majority"
+            )
         except Exception as err:
-            self.logger.error(f"(__init__): Something went wrong on initiation process\n {err}")
+            self.logger.error(
+                f"(__init__): Something went wrong on initiation process\n {err}"
+            )
             self.logger.error(traceback.format_exc())
 
     def get_mongo_db_client_object(self):
@@ -30,7 +34,8 @@ class MongoDBConnect:
             return mongo_client
         except Exception as err:
             self.logger.error(
-                f"(get_mongo_db_client_object): Failed to create of client object\n {err}")
+                f"(get_mongo_db_client_object): Failed to create of client object\n {err}"
+            )
             self.logger.error(traceback.format_exc())
 
     def get_database(self, db_name):
@@ -44,7 +49,8 @@ class MongoDBConnect:
             return mongo_client[db_name]
         except Exception as err:
             self.logger.error(
-                f"(get_database): Failed to get the database list\n {err}")
+                f"(get_database): Failed to get the database list\n {err}"
+            )
             self.logger.error(traceback.format_exc())
 
     def get_collection(self, collection_name, db_name):
@@ -57,7 +63,8 @@ class MongoDBConnect:
             return database[collection_name]
         except Exception as err:
             self.logger.error(
-                f"(get_collection): Failed to get the collection list\n {err}")
+                f"(get_collection): Failed to get the collection list\n {err}"
+            )
             self.logger.error(traceback.format_exc())
 
     def is_collection_present(self, collection_name, db_name):
@@ -80,7 +87,8 @@ class MongoDBConnect:
                 return False
         except Exception as err:
             self.logger.error(
-                f"(is_collection_present): Failed to check collection\n {err}")
+                f"(is_collection_present): Failed to check collection\n {err}"
+            )
             self.logger.error(traceback.format_exc())
 
     def is_database_present(self, db_name):
@@ -101,7 +109,8 @@ class MongoDBConnect:
                 return False
         except Exception as err:
             self.logger.error(
-                f"(is_database_present): Failed on checking if the database is present or not \n {err}")
+                f"(is_database_present): Failed on checking if the database is present or not \n {err}"
+            )
             self.logger.error(traceback.format_exc())
 
     def create_database(self, db_name):
@@ -125,7 +134,8 @@ class MongoDBConnect:
                 return database
         except Exception as err:
             self.logger.error(
-                f"(create_database): Failed on creating database \n {err}")
+                f"(create_database): Failed on creating database \n {err}"
+            )
             self.logger.error(traceback.format_exc())
 
     def create_collection(self, collection_name, db_name):
@@ -146,7 +156,8 @@ class MongoDBConnect:
                 return collection
         except Exception as err:
             self.logger.error(
-                f"(create_collection): Failed to create collection \n {err}")
+                f"(create_collection): Failed to create collection \n {err}"
+            )
             self.logger.error(traceback.format_exc())
 
     def insert_records(self, db_name, collection_name, records):
@@ -169,8 +180,8 @@ class MongoDBConnect:
                 x = collection.find_one({"VIDEO_TITLE": records["VIDEO_TITLE"]})
                 if x:
                     self.logger.info(f"{x['_id']}.")
-                    if len(x['COMMENTS']) != len(records["COMMENTS"]):
-                        myquery = {"_id": x['_id']}
+                    if len(x["COMMENTS"]) != len(records["COMMENTS"]):
+                        myquery = {"_id": x["_id"]}
                         newvalues = {"$set": {"COMMENTS": records["COMMENTS"]}}
                         x = collection.update_many(myquery, newvalues)
                         self.logger.info(f"{x.modified_count} documents updated.")
@@ -188,8 +199,7 @@ class MongoDBConnect:
                 self.logger.info(f"Data inserted in {collection_name}.")
         except Exception as err:
             self.logger.error(traceback.format_exc())
-            raise Exception(
-                f"(insert_records): Failed to insert records \n {err}")
+            raise Exception(f"(insert_records): Failed to insert records \n {err}")
 
     def find_records(self, db_name, collection_name, title):
         """
@@ -216,5 +226,6 @@ class MongoDBConnect:
                 return data
         except Exception as err:
             self.logger.error(
-                f"(find_records): Failed to find record for the given collection and database \n {err}")
+                f"(find_records): Failed to find record for the given collection and database \n {err}"
+            )
             self.logger.error(traceback.format_exc())
