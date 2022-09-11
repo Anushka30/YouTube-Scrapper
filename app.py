@@ -68,6 +68,15 @@ class ThreadClass:
 
 
 def select_thread(search_string, fetch_count):
+    """
+    This function is run to background to fetch the data from database.
+    Args:
+        search_string: Search String
+        fetch_count: No of videos
+
+    Returns:
+
+    """
     try:
         global comment_df
         search_id = search_string.split("/")[-1]
