@@ -69,3 +69,5 @@ Werkzeug==2.2.2
 wsproto==1.2.0
 zipp==3.8.1
 gevent==21.12.0
+
+https://screen-recorder-bucket.s3.ap-south-1.amazonaws.com/ScreenRecorder_2022-09-11_e8ab0f27-2509-451a-a98a-24a7ec637573.mp4
