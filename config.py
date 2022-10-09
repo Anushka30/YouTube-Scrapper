@@ -18,8 +18,8 @@ conns = {
     },
     "Links": {"YouTube": "https://www.youtube.com"},
     "GDrive": {
-        "Folder_ID": "1-dfBDWkDmpQaIMeKS7ZUPzUA9NyuZZ7Q",
-        "Scopes": "https://www.googleapis.com/auth/drive",
+        "Folder_ID": "1-",
+        "Scopes": "",
         "Secrets": "client_secrets.json",
         "API_Name": "drive",
         "API_VERSION": "v3",
